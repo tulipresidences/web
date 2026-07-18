@@ -35,7 +35,7 @@
      - This costs nothing for a small site: Google gives a recurring free
        monthly credit that comfortably covers typical traffic.
 ============================================================= */
-var GOOGLE_PLACE_ID = 'YOUR_PLACE_ID_HERE';
+var GOOGLE_PLACE_ID = 'ChIJ7xJRvRDnDDkRHvi5fnLTm34';
 
 async function initGoogleReviews() {
     var grid = document.getElementById('reviewsGrid');
