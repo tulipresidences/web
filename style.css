@@ -96,10 +96,8 @@ a {
    ========================================================================== */
 
 header.site-header {
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 999;
     height: var(--header-h);
     display: flex;
@@ -202,7 +200,7 @@ nav.main-nav a.active {
 }
 
 main {
-    padding-top: var(--header-h);
+    padding-top: 0;
 }
 
 /* ==========================================================================
@@ -466,6 +464,69 @@ section {
     color: #4a3646;
     padding: 0 6px;
     min-height: 4.6rem;
+}
+
+/* ==========================================================================
+   Reviews (Google)
+   ========================================================================== */
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.review-card {
+    background: var(--sand);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: var(--shadow-soft);
+}
+
+.review-stars {
+    color: var(--pink);
+    letter-spacing: 2px;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.review-text {
+    font-size: 0.95rem;
+    color: #4a3646;
+    margin: 0 0 18px;
+    line-height: 1.6;
+}
+
+.review-author {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.04em;
+    color: var(--rose-deep);
+}
+
+.reviews-placeholder {
+    grid-column: 1 / -1;
+    color: #8a7480;
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+.reviews-placeholder code {
+    font-family: var(--font-mono);
+    background: var(--sand);
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-style: normal;
+}
+
+.reviews-google-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 32px 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    color: #8a7480;
 }
 
 /* ==========================================================================
@@ -773,6 +834,10 @@ footer.site-footer a {
 
     .facility-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
     }
 
     .location-layout,
