@@ -99,7 +99,8 @@ header.site-header {
     position: sticky;
     top: 0;
     z-index: 999;
-    height: var(--header-h);
+    height: calc(var(--header-h) + env(safe-area-inset-top, 0px));
+    padding-top: env(safe-area-inset-top, 0px);
     display: flex;
     align-items: center;
     background: var(--pink);
@@ -805,7 +806,7 @@ textarea:focus-visible {
 .whatsapp-fab {
     position: fixed;
     right: 22px;
-    bottom: 22px;
+    bottom: calc(22px + env(safe-area-inset-bottom, 0px));
     width: 56px;
     height: 56px;
     border-radius: 50%;
@@ -878,7 +879,7 @@ footer.site-footer a {
 @media (max-width: 760px) {
     nav.main-nav {
         position: fixed;
-        top: var(--header-h);
+        top: calc(var(--header-h) + env(safe-area-inset-top, 0px));
         left: 0;
         right: 0;
         background: var(--cream);
