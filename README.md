@@ -28,10 +28,10 @@ scroll animations, a photo lightbox, and cleaner semantic HTML.
   Maps **embed iframe** (already correctly pointed at your Noida address),
   so the dead code was removed and `script.js` was rewritten to power the
   menu, animations, lightbox and contact form instead.
-- **Working contact form** — validates the fields client‑side and opens the
-  visitor's email app with a pre‑filled message (see the note in
-  `script.js` about swapping in a real backend later, e.g. Formspree or your
-  own API).
+- **Working contact form** — submits via [Formspree](https://formspree.io),
+  so messages arrive in your Formspree inbox (and by email, if you've set
+  that up on their side) without the visitor leaving the page. Validates
+  fields client‑side first and shows a clear status message either way.
 - **Accessibility basics** — visible focus outlines, `aria-live` status text
   on the form, `alt` text on every image, reduced‑motion support.
 
@@ -82,8 +82,5 @@ npx serve .
 
 ## Next steps you may want
 
-- Swap the mailto‑based contact form for a real form backend (Formspree,
-  Getform, or your own server) — the code comment in `script.js` marks
-  exactly where to make that change.
 - Replace the sample copy on the home page with anything more specific
   (rent, room types, mess/food details) if you'd like the site to cover it.

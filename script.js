@@ -35,7 +35,7 @@
      - This costs nothing for a small site: Google gives a recurring free
        monthly credit that comfortably covers typical traffic.
 ============================================================= */
-var GOOGLE_PLACE_ID = 'YOUR_PLACE_ID_HERE';
+var GOOGLE_PLACE_ID = 'ChIJ7xJRvRDnDDkRHvi5fnLTm34';
 
 async function initGoogleReviews() {
     var grid = document.getElementById('reviewsGrid');
@@ -207,10 +207,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* ---------------------------------------------------------
        Contact form (contact.html)
-       No backend is wired up yet, so this validates the fields
-       and hands off to the visitor's email client via mailto:.
-       Replace this handler with a fetch() call to your own
-       endpoint or a form service (e.g. Formspree) when ready.
+       Submits to Formspree (https://formspree.io) via fetch, so the person
+       stays on the page and sees a status message instead of leaving to
+       their email app. The form's action/method attributes in contact.html
+       point at the same endpoint, as a fallback in case JavaScript fails
+       to load (the browser will do a normal form POST + redirect instead).
     --------------------------------------------------------- */
     var contactForm = document.getElementById('contactForm');
     var formStatus = document.getElementById('formStatus');
@@ -221,30 +222,50 @@ document.addEventListener('DOMContentLoaded', function () {
 
             var name = contactForm.name.value.trim();
             var email = contactForm.email.value.trim();
-            var phone = contactForm.phone.value.trim();
             var message = contactForm.message.value.trim();
 
             if (!name || !email || !message) {
-                formStatus.textContent = 'Please fill in your name, email and message.';
                 formStatus.style.color = '#c0392b';
+                formStatus.textContent = 'Please fill in your name, email and message.';
                 return;
             }
 
-            var subject = encodeURIComponent('Enquiry from ' + name + ' — Tulip Residences website');
-            var bodyLines = [
-                'Name: ' + name,
-                'Email: ' + email,
-                phone ? 'Phone: ' + phone : null,
-                '',
-                message
-            ].filter(Boolean);
-            var body = encodeURIComponent(bodyLines.join('\n'));
-
-            window.location.href = 'mailto:info.tuliphostel@gmail.com?subject=' + subject + '&body=' + body;
-
+            var submitBtn = contactForm.querySelector('.btn-submit');
+            var originalBtnText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending…';
             formStatus.style.color = '';
-            formStatus.textContent = 'Opening your email app to send this message…';
+            formStatus.textContent = '';
+
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: { 'Accept': 'application/json' }
+            })
+                .then(function (response) {
+                    if (response.ok) {
+                        formStatus.style.color = 'var(--leaf)';
+                        formStatus.textContent = "Thanks — we've got your message and will be in touch soon.";
+                        contactForm.reset();
+                    } else {
+                        return response.json().then(function (data) {
+                            var errorMsg = (data && data.errors && data.errors.map(function (err) { return err.message; }).join(', '))
+                                || 'Something went wrong sending that. Please try again, or email us directly.';
+                            formStatus.style.color = '#c0392b';
+                            formStatus.textContent = errorMsg;
+                        });
+                    }
+                })
+                .catch(function () {
+                    formStatus.style.color = '#c0392b';
+                    formStatus.textContent = 'Could not send — check your connection and try again, or email us directly.';
+                })
+                .finally(function () {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                });
         });
     }
+
 
 });
