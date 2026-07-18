@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tulipresidences.github.io/web/sitemap.xml

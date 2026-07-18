@@ -6,7 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tulip Residences — Student Living Near Amity University, Noida</title>
     <meta name="description" content="Tulip Residences is a modern, well-furnished residence for students opposite Amity University, Sector-126, Noida.">
+    <link rel="icon" type="image/jpeg" href="images/0.jpeg">
+    <link rel="canonical" href="https://tulipresidences.github.io/web/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tulip Residences — Student Living Near Amity University, Noida">
+    <meta property="og:description" content="Tulip Residences is a modern, well-furnished residence for students opposite Amity University, Sector-126, Noida.">
+    <meta property="og:image" content="https://tulipresidences.github.io/web/images/1.jpeg">
+    <meta property="og:url" content="https://tulipresidences.github.io/web/index.html">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LodgingBusiness",
+        "name": "Tulip Residences",
+        "image": "https://tulipresidences.github.io/web/images/1.jpeg",
+        "telephone": "+91-9625594424",
+        "email": "info.tuliphostel@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "RA-03, Raipur Khader, Opposite Gate No. 2, Amity University",
+            "addressLocality": "Noida",
+            "addressRegion": "Uttar Pradesh",
+            "postalCode": "201301",
+            "addressCountry": "IN"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 28.5422895,
+            "longitude": 77.335755
+        },
+        "url": "https://tulipresidences.github.io/web/"
+    }
+    </script>
 </head>
 
 <body>
@@ -96,7 +128,26 @@
             </div>
         </section>
 
-        <section class="section-white" id="map-section">
+        <section class="section-white" id="reviews-section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">In residents' words</p>
+                    <h2>What people say about staying here</h2>
+                    <p>Live ratings pulled from our Google Business Profile.</p>
+                </div>
+                <div class="reviews-grid reveal" id="reviewsGrid">
+                    <p class="reviews-placeholder">Reviews will appear here once the Google connection is
+                        configured — see the setup notes at the top of <code>script.js</code>.</p>
+                </div>
+                <p class="reviews-google-badge">
+                    <img src="https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_68x28dp.png"
+                        alt="" height="16">
+                    Reviews from Google
+                </p>
+            </div>
+        </section>
+
+        <section class="section-alt" id="map-section">
             <div class="container">
                 <div class="section-head reveal">
                     <p class="eyebrow">Find us</p>
@@ -117,7 +168,7 @@
             </div>
         </section>
 
-        <section class="section-alt" id="contact-section">
+        <section class="section-white" id="contact-section">
             <div class="container">
                 <div class="section-head reveal">
                     <p class="eyebrow">Get in touch</p>
@@ -144,7 +195,22 @@
         </div>
     </footer>
 
+    <a class="whatsapp-fab" href="https://wa.me/919625594424?text=Hi%2C%20I%27m%20interested%20in%20Tulip%20Residences"
+        target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.009-.371-.011-.57-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.762.462 3.48 1.34 4.997L2 22l5.117-1.334a9.96 9.96 0 0 0 4.887 1.246h.004c5.514 0 9.997-4.483 9.997-9.997 0-2.671-1.04-5.182-2.929-7.071A9.929 9.929 0 0 0 12.004 2.003zm0 18.174h-.003a8.15 8.15 0 0 1-4.156-1.14l-.298-.177-3.037.792.81-2.96-.194-.304a8.17 8.17 0 0 1-1.253-4.371c0-4.515 3.674-8.188 8.19-8.188 2.187 0 4.243.852 5.79 2.399a8.132 8.132 0 0 1 2.397 5.792c0 4.515-3.674 8.157-8.246 8.157z"/>
+        </svg>
+    </a>
+
     <script src="script.js"></script>
+    <!--
+      Google Reviews setup — see the top of script.js for full instructions.
+      Once you have an API key, replace YOUR_GOOGLE_MAPS_API_KEY below.
+      This tag is only needed on this page, since it's the only one showing reviews.
+    -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initGoogleReviews"
+        async defer></script>
 </body>
 
 </html>
