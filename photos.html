@@ -4,88 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tulip Residences</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js"></script>
+    <title>Photos — Tulip Residences</title>
+    <meta name="description" content="A look inside Tulip Residences — rooms, common areas and surroundings.">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <center><img src="images/0.jpeg" width="150" height="135"
-                    alt="Tulip Residences"></center>
-            <br>
-            <nav>
+
+    <header class="site-header" id="siteHeader">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <img src="images/0.jpeg" alt="Tulip Residences logo">
+            </a>
+            <nav class="main-nav" id="mainNav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="photos.html">Photos</a></li>
+                    <li><a href="photos.html" class="active">Photos</a></li>
                     <li><a href="location.html">Location</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
-    <br>
-    <br>
-    <br><br><br><br><br><br>
-    <main>
-        <section id="photos-section">
-            <div class="facility">
-                <img src="images/9.jpeg">
-            </div>
-            <div class="facility">
-                <img src="images/19.jpeg">
-            </div>
-            <div class="facility">
-                <img src="images/14.jpeg">
-            </div>
-            <div class="facility">
-                <img src="images/10.jpeg">
-            </div>
-            <div class="facility">
-                <img src="images/13.jpeg">
-            </div>
-            <div class="facility">
-                <img src="images/12.jpeg">
-            </div>
-            <div class="facility">
-                <img src="images/11.jpeg">
-            </div>
-            <div class="facility">
-                <img src="images/6.jpeg">
-            </div>
-            <div class="facility">
-                <img src="images/7.jpeg">
-            </div>
-            <div class="facility">
-                <img src="images/8.jpeg">
-            </div>
-            <div class="facility">
-                <img src="images/15.jpeg">
-            </div>
-            <div class="facility">
-                <img src="images/16.jpeg">
-            </div>
-            <div class="facility">
-                <img src="images/17.jpeg">
-            </div>
-            <div class="facility">
-                <img src="images/18.jpeg">
-            </div>
-            <div class="facility">
-                <img src="images/20.jpeg">
-            </div>
-            <div class="facility">
-                <img src="images/21.jpeg">
-            </div>
 
+    <main>
+        <section>
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">Around the residence</p>
+                    <h2>Photos</h2>
+                    <p>Rooms, common spaces and the neighbourhood — tap any photo to see it larger.</p>
+                </div>
+
+                <div class="gallery-grid" id="galleryGrid">
+                    <div class="gallery-item reveal"><img src="images/9.jpeg" alt="Tulip Residences photo 9" loading="lazy"></div>
+                    <div class="gallery-item reveal"><img src="images/19.jpeg" alt="Tulip Residences photo 19" loading="lazy"></div>
+                    <div class="gallery-item reveal"><img src="images/14.jpeg" alt="Tulip Residences photo 14" loading="lazy"></div>
+                    <div class="gallery-item reveal"><img src="images/10.jpeg" alt="Tulip Residences photo 10" loading="lazy"></div>
+                    <div class="gallery-item reveal"><img src="images/13.jpeg" alt="Tulip Residences photo 13" loading="lazy"></div>
+                    <div class="gallery-item reveal"><img src="images/12.jpeg" alt="Tulip Residences photo 12" loading="lazy"></div>
+                    <div class="gallery-item reveal"><img src="images/11.jpeg" alt="Tulip Residences photo 11" loading="lazy"></div>
+                    <div class="gallery-item reveal"><img src="images/6.jpeg" alt="Tulip Residences photo 6" loading="lazy"></div>
+                    <div class="gallery-item reveal"><img src="images/7.jpeg" alt="Tulip Residences photo 7" loading="lazy"></div>
+                    <div class="gallery-item reveal"><img src="images/8.jpeg" alt="Tulip Residences photo 8" loading="lazy"></div>
+                    <div class="gallery-item reveal"><img src="images/15.jpeg" alt="Tulip Residences photo 15" loading="lazy"></div>
+                    <div class="gallery-item reveal"><img src="images/16.jpeg" alt="Tulip Residences photo 16" loading="lazy"></div>
+                    <div class="gallery-item reveal"><img src="images/17.jpeg" alt="Tulip Residences photo 17" loading="lazy"></div>
+                    <div class="gallery-item reveal"><img src="images/18.jpeg" alt="Tulip Residences photo 18" loading="lazy"></div>
+                    <div class="gallery-item reveal"><img src="images/20.jpeg" alt="Tulip Residences photo 20" loading="lazy"></div>
+                    <div class="gallery-item reveal"><img src="images/21.jpeg" alt="Tulip Residences photo 21" loading="lazy"></div>
+                </div>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>
-            <center>&copy; 2023 Tulip Residences. All rights reserved.</center>
-        </p>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+        <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous photo">&#8249;</button>
+        <img id="lightboxImg" src="" alt="">
+        <button class="lightbox-nav next" id="lightboxNext" aria-label="Next photo">&#8250;</button>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            &copy; 2026 Tulip Residences. All rights reserved.
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

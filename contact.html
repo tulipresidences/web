@@ -4,51 +4,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tulip Residences</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js"></script>
+    <title>Contact — Tulip Residences</title>
+    <meta name="description" content="Get in touch with Tulip Residences — address, phone, email and a quick enquiry form.">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <center><img src="images/0.jpeg" width="150" height="135"
-                    alt="Tulip Residences"></center>
-            <br>
-            <nav>
+
+    <header class="site-header" id="siteHeader">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <img src="images/0.jpeg" alt="Tulip Residences logo">
+            </a>
+            <nav class="main-nav" id="mainNav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="photos.html">Photos</a></li>
                     <li><a href="location.html">Location</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
             </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
-    <br>
-    <br>
-    <br><br><br><br><br><br>
+
     <main>
-        <section id="contact-section">
-            <h2>Contact Us</h2>
-            <p><b>Address:</b><br><br>
-                Tulip Residences<br>
-                RA-03, Raipur Khader<br>
-                Opposite Gate No. 2, Amity University<br>
-                Sector-126<br>
-                Noida, Gautam Buddh Nagar<br>
-                201301<br><br>
-                <b>Phone No.</b><br> +91-9625594424<br><br>
-                <b>Email:</b><br>
-                info.tuliphostel@gmail.com
-            </p>
+        <section>
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">Say hello</p>
+                    <h2>Contact us</h2>
+                    <p>Reach out by phone or email, or send a quick note below and we'll get back to you.</p>
+                </div>
+
+                <div class="contact-layout">
+                    <div class="info-card reveal">
+                        <h3>Details</h3>
+                        <ul class="info-list">
+                            <li><span class="icon">📍</span>
+                                <span>
+                                    Tulip Residences<br>
+                                    RA‑03, Raipur Khader<br>
+                                    Opposite Gate No. 2, Amity University<br>
+                                    Sector‑126, Noida<br>
+                                    Gautam Buddh Nagar — 201301
+                                </span>
+                            </li>
+                            <li><span class="icon">📞</span> <a href="tel:+919625594424">+91‑9625594424</a></li>
+                            <li><span class="icon">✉️</span> <a href="mailto:info.tuliphostel@gmail.com">info.tuliphostel@gmail.com</a></li>
+                        </ul>
+                    </div>
+
+                    <form class="contact-form reveal" id="contactForm" novalidate>
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required autocomplete="name">
+                        </div>
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required autocomplete="email">
+                        </div>
+                        <div class="field">
+                            <label for="phone">Phone (optional)</label>
+                            <input type="tel" id="phone" name="phone" autocomplete="tel">
+                        </div>
+                        <div class="field">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                        <button type="submit" class="btn-submit">Send message</button>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>
-            <center>&copy; 2023 Tulip Residences. All rights reserved.</center>
-        </p>
+
+    <footer class="site-footer">
+        <div class="container">
+            &copy; 2026 Tulip Residences. All rights reserved.
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
