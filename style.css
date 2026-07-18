@@ -42,6 +42,7 @@
 
 html {
     scroll-behavior: smooth;
+    background: var(--pink);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -104,6 +105,8 @@ header.site-header {
     display: flex;
     align-items: center;
     background: var(--pink);
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
     transition: box-shadow 0.3s ease;
 }
 
