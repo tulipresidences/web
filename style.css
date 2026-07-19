@@ -534,6 +534,38 @@ section {
 }
 
 /* ==========================================================================
+   Amenities
+   ========================================================================== */
+
+.amenities-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.amenity-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 20px 22px;
+    box-shadow: var(--shadow-soft);
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    letter-spacing: 0.02em;
+    color: var(--rose-deep);
+}
+
+.amenity-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+/* ==========================================================================
    Map section
    ========================================================================== */
 
@@ -820,11 +852,34 @@ textarea:focus-visible {
     justify-content: center;
     box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.45);
     z-index: 900;
-    transition: transform 0.2s ease;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.whatsapp-fab.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 .whatsapp-fab:hover {
     transform: scale(1.08);
+}
+
+@media (max-width: 760px) {
+    .whatsapp-fab {
+        width: 48px;
+        height: 48px;
+        right: 16px;
+        bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .whatsapp-fab svg {
+        width: 24px;
+        height: 24px;
+    }
 }
 
 /* ==========================================================================
@@ -851,6 +906,10 @@ footer.site-footer a {
    ========================================================================== */
 
 @media (max-width: 980px) {
+    .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .hero-inner {
         grid-template-columns: 1fr;
     }
@@ -880,6 +939,10 @@ footer.site-footer a {
 }
 
 @media (max-width: 760px) {
+    .amenities-grid {
+        grid-template-columns: 1fr;
+    }
+
     nav.main-nav {
         position: fixed;
         top: calc(var(--header-h) + env(safe-area-inset-top, 0px));

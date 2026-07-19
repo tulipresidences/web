@@ -40,6 +40,7 @@ scroll animations, a photo lightbox, and cleaner semantic HTML.
 ```
 tulip-site/
 ├── index.html      Home page
+├── amenities.html   Amenities list
 ├── photos.html      Photo gallery + lightbox
 ├── location.html    Map + address
 ├── contact.html      Contact details + enquiry form

@@ -129,6 +129,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* ---------------------------------------------------------
+       WhatsApp button — only appears after scrolling a bit, so it
+       doesn't sit on top of the hero text on first load. Pages
+       without a hero (contact, location, photos) show it right away.
+    --------------------------------------------------------- */
+    var whatsappFab = document.querySelector('.whatsapp-fab');
+    if (whatsappFab) {
+        if (document.querySelector('.hero')) {
+            var onScrollWhatsapp = function () {
+                whatsappFab.classList.toggle('visible', window.scrollY > 400);
+            };
+            window.addEventListener('scroll', onScrollWhatsapp, { passive: true });
+            onScrollWhatsapp();
+        } else {
+            whatsappFab.classList.add('visible');
+        }
+    }
+
+    /* ---------------------------------------------------------
        Scroll-reveal animation
     --------------------------------------------------------- */
     var revealEls = document.querySelectorAll('.reveal');
